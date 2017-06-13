@@ -12,6 +12,8 @@ RUN \
   apt-get -y autoremove && \
   rm -rf /var/lib/apt/* && rm -rf && rm -rf /var/lib/cache/* && rm -rf /var/lib/log/* && rm -rf /tmp/*
 
+COPY default.vcl /etc/varnish/default.vcl
+
 COPY start.sh /root/start.sh
 
 CMD ["/root/start.sh"]
